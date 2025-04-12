@@ -1,6 +1,6 @@
 url: ""
 baseurl: ""
-title: "" # the name of your site, e.g. ACME Corp.
+title: "Pavo Template"
 
 plugins:
   - jekyll-postcss-v2
