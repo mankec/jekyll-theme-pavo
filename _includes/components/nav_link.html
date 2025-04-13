@@ -1,0 +1,20 @@
+{% capture full_destination %}
+  {{- include.destination }}{% if include.anchor %}#{{ include.anchor }}{% endif %}
+{% endcapture %}
+{% assign dropdown_item = include.dropdown_item | default: false %}
+
+{% if dropdown_item %}
+  <a
+    class="dropdown-item page-scroll"
+    href="{{ full_destination | relative_url }}"
+  >
+    {{ include.label }}
+  </a>
+{% else %}
+  <a
+    class="nav-link page-scroll"
+    href="{{ full_destination | relative_url }}"
+  >
+    {{ include.label }}
+  </a>
+{% endif  %}
