@@ -13,7 +13,7 @@
       {% if include.anchor == nil and include.path == page.path %}
         active
       {% endif %}"
-    href="{{ full_path | relative_url }}"
+    href="{{ full_path | absolute_url }}"
   >
     {{ include.label }}
   </a>
@@ -23,7 +23,7 @@
       {% if include.anchor == nil and include.path == page.path %}
         active
       {% endif %}"
-    href="{{ full_path | relative_url }}"
+    href="{{ full_path | absolute_url }}"
   >
     {{ include.label }}
   </a>

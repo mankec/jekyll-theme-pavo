@@ -26,14 +26,14 @@
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-    <link href="{{ "assets/css/base.css" | relative_url }}" rel="stylesheet" />
-    <link href="{{ "assets/css/fontawesome-all.css" | relative_url }}" rel="stylesheet" />
-    <link href="{{ "assets/css/swiper.css" | relative_url }}" rel="stylesheet" />
-    <link href="{{ "assets/css/magnific-popup.css" | relative_url }}" rel="stylesheet" />
-    <link href="{{ "assets/css/styles.css" | relative_url }}" rel="stylesheet" />
+    <link href="{{ "assets/css/base.css" | absolute_url }}" rel="stylesheet" />
+    <link href="{{ "assets/css/fontawesome-all.css" | absolute_url }}" rel="stylesheet" />
+    <link href="{{ "assets/css/swiper.css" | absolute_url }}" rel="stylesheet" />
+    <link href="{{ "assets/css/magnific-popup.css" | absolute_url }}" rel="stylesheet" />
+    <link href="{{ "assets/css/styles.css" | absolute_url }}" rel="stylesheet" />
 
     <!-- Favicon  -->
-    <link rel="icon" href="{{ "assets/images/favicon.png" | relative_url }}" />
+    <link rel="icon" href="{{ "assets/images/favicon.png" | absolute_url }}" />
   </head>
 
   <body data-spy="scroll" data-target=".fixed-top">
@@ -46,18 +46,18 @@
     {% include copyright.html %}
 
     <!-- Scripts -->
-    <script src="{{ "assets/js/jquery.min.js" | relative_url }}"></script> <!-- jQuery for JavaScript plugins -->
-    <script src="{{ "assets/js/jquery.easing.min.js" | relative_url }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{ "assets/js/swiper.min.js" | relative_url }}"></script> <!-- Swiper for image and text sliders -->
-    <script src="{{ "assets/js/jquery.magnific-popup.js" | relative_url }}"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="{{ "assets/js/jquery.min.js" | absolute_url }}"></script> <!-- jQuery for JavaScript plugins -->
+    <script src="{{ "assets/js/jquery.easing.min.js" | absolute_url }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{{ "assets/js/swiper.min.js" | absolute_url }}"></script> <!-- Swiper for image and text sliders -->
+    <script src="{{ "assets/js/jquery.magnific-popup.js" | absolute_url }}"></script> <!-- Magnific Popup for lightboxes -->
 
     <!-- Custom scripts -->
     {% if jekyll.environment == "development" %}
       <!-- In development we don't want JS to be cached so set different URL when loading it -->
 
-      <script src="{{ "assets/js/scripts.js" | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+      <script src="{{ "assets/js/scripts.js" | absolute_url }}?v={{ site.time | date: '%s' }}"></script>
     {% else %}
-      <script src="{{ "assets/js/scripts.js" | relative_url }}"></script>
+      <script src="{{ "assets/js/scripts.js" | absolute_url }}"></script>
     {% endif  %}
   </body>
 </html>
