@@ -501,7 +501,7 @@ input[type="checkbox"] {
 .dropdown.show > a,
 .nav-link:hover,
 .nav-link.active,
-li.dropdown:has(a.nav-link, div.dropdown-menu > a.dropdown-item.active) {
+div.dropdown-menu > a.dropdown-item.active {
     color: #ff6e84;
     text-decoration: none;
 }
