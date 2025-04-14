@@ -1,3 +1,5 @@
+{% assign dropdown_item_paths = "article.html, terms.html, privacy.html" | split: ", " %}
+
 <nav class="navbar fixed-top">
   <div
     class="container mx-auto flex flex-wrap items-center justify-between sm:px-4 lg:flex-nowrap lg:px-8 xl:max-w-6xl">
@@ -22,15 +24,15 @@
         <li>
           {%
             include components/nav_link.html
-              destination="index.html"
+              path="index.html"
               anchor="header"
-              label="Home" 
+              label="Home"
           %}
         </li>
         <li>
           {%
             include components/nav_link.html
-              destination="index.html"
+              path="index.html"
               anchor="features"
               label="Features"
           %}
@@ -38,7 +40,7 @@
         <li>
           {%
             include components/nav_link.html
-              destination="index.html"
+              path="index.html"
               anchor="details"
               label="Details"
           %}
@@ -46,32 +48,42 @@
         <li>
           {%
             include components/nav_link.html
-              destination="index.html"
+              path="index.html"
               anchor="pricing"
               label="Pricing"
           %}
         </li>
         <li class="dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Drop</a>
+          <a
+            class="nav-link dropdown-toggle
+              {% if dropdown_item_paths contains page.path %}
+                active
+              {% endif %}"
+            href="#"
+            id="dropdown01"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+            Drop
+          </a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             {%
               include components/nav_link.html
-                destination="article.html"
+                path="article.html"
                 label="Article"
                 dropdown_item=true
             %}
             <div class="dropdown-divider"></div>
             {%
               include components/nav_link.html
-                destination="terms.html"
+                path="terms.html"
                 label="Terms"
                 dropdown_item=true
             %}
             <div class="dropdown-divider"></div>
             {%
               include components/nav_link.html
-                destination="privacy.html"
+                path="privacy.html"
                 label="Privacy"
                 dropdown_item=true
             %}
@@ -80,7 +92,7 @@
         <li>
           {%
             include components/nav_link.html
-              destination="index.html"
+              path="index.html"
               anchor="download"
               label="Download"
           %}

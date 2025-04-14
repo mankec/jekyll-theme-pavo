@@ -46,6 +46,14 @@
     <script src="{{ "assets/js/jquery.easing.min.js" | relative_url }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="{{ "assets/js/swiper.min.js" | relative_url }}"></script> <!-- Swiper for image and text sliders -->
     <script src="{{ "assets/js/jquery.magnific-popup.js" | relative_url }}"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="{{ "assets/js/scripts.js" | relative_url }}"></script> <!-- Custom scripts -->
+
+    <!-- Custom scripts -->
+    {% if jekyll.environment == "development" %}
+      <!-- In development we don't want JS to be cached so set different URL when loading it -->
+
+      <script src="{{ "assets/js/scripts.js" | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+    {% else %}
+      <script src="{{ "assets/js/scripts.js" | relative_url }}"></script>
+    {% endif  %}
   </body>
 </html>

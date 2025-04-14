@@ -153,16 +153,16 @@
 	function getMenuItems() {
 		var menuItems = [];
 		$('.nav-link').each(function() {
-			var hash = $(this).attr('href').substr(1);
+			var hash = $(this).attr('href').split("#").at(-1)
 			if(hash !== "")
 				menuItems.push(hash);
 		})
 		return menuItems;
-	}	
+	}
 
 	/* Prevents adding of # at the end of URL on click of non-pagescroll links */
 	$('.nav-link').click(function (e) {
-		var hash = $(this).attr('href').substr(1);
+		var hash = $(this).attr('href').split("#").at(-1);
 		if(hash == "")
 			e.preventDefault();
 	});
@@ -178,15 +178,15 @@
 	/* Function to change the active link */
 	function changeActive() {
 		const menuItems = getMenuItems();
-		$.each(menuItems, function(index, value){
+		$.each(menuItems, function(_, value){
 			var offsetSection = $('#' + value).offset().top;
 			var docScroll = $(document).scrollTop();
-			var docScroll1 = docScroll + 1; 
+			var docScroll1 = docScroll + 1;
 			
 			if ( docScroll1 >= offsetSection ){
 				$('.nav-link').removeClass('active');
 				$('.nav-link[href$="#'+value+'"]').addClass('active');
-			}  
+			}
 		});
 	}
 
