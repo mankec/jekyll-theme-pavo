@@ -1,11 +1,11 @@
-# Jekyll with Tailwind barebone setup, deployable on GitHub Pages
+# Pavo template adapted for usage in Jekyll
 
-This is an updated version of [jekyll-tailwind-2024](https://github.com/gusano/jekyll-tailwind-2024) so it can work with `jekyll 4.4.1`. Thanks to them for doing most of the work!
+This is a [theme](https://themewagon.com/themes/free-tailwindcss-html-5-website-template-pavo/) that has been updated to work with Jekyll and GitHub Pages. It used [jekyll-tailwind-2025](https://github.com/mankec/jekyll-tailwind-2025) as a setup.
 
 ## Getting started
 
 ```
-git clone git@github.com:mankec/jekyll-tailwind-2025.git my-new-repo
+git clone git@github.com:mankec/jekyll-theme-pavo.git my-new-repo
 cd my-new-repo
 git remote rm origin
 git remote add origin your-git-ssh-url
@@ -32,9 +32,23 @@ After that you will need to set [SSH Private Key](https://github.com/peaceiris/a
 
 GitHub Workflow is in `.github/workflows/github-pages.yml`.
 
-Update `url` and `baseurl` in `_config.yml`.
+Update `url` and `baseurl` in `_config.production.yml`.
 
 ```
 url: 'https://your-username.github.io'
 baseurl: 'your-repo-name'
 ```
+
+## Liquid syntax highlighting
+
+[Extension](https://marketplace.visualstudio.com/items/?itemName=sissel.shopify-liquid) for Liquid that I use doesn't support HTML. Therefore, I added in `.vscode/settings.json`.
+
+```json
+{
+  "files.associations": {
+    "*.html": "liquid"
+  }
+}
+```
+
+Now every HTML file have their Language Mode set to Liquid.
